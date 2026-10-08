@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Hotel Room Booking System</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <h1>🏨 Hotel Room Booking System</h1>
+
+        <p>Manage rooms and bookings easily</p>
+
+    </header>
+
+
+    <main>
+
+        <!-- ======================================
+             ADD ROOM
+        ======================================= -->
+
+        <section class="card">
+
+            <h2>Add New Room</h2>
+
+            <form id="roomForm">
+
+                <input
+                    type="number"
+                    id="roomNo"
+                    placeholder="Room Number"
+                    required
+                    min="1">
+
+                <select id="roomType" required>
+
+                    <option value="">
+                        Select Room Type
+                    </option>
+
+                    <option value="Single">
+                        Single
+                    </option>
+
+                    <option value="Double">
+                        Double
+                    </option>
+
+                    <option value="Deluxe">
+                        Deluxe
+                    </option>
+
+                    <option value="Suite">
+                        Suite
+                    </option>
+
+                </select>
+
+                <input
+                    type="number"
+                    id="roomPrice"
+                    placeholder="Price per night"
+                    required
+                    min="1">
+
+                <button type="submit">
+                    Add Room
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- ======================================
+             SEARCH ROOMS
+        ======================================= -->
+
+        <section class="card">
+
+            <h2>Search Available Rooms</h2>
+
+            <form id="searchForm">
+
+                <select id="searchType">
+
+                    <option value="">
+                        All Room Types
+                    </option>
+
+                    <option value="Single">
+                        Single
+                    </option>
+
+                    <option value="Double">
+                        Double
+                    </option>
+
+                    <option value="Deluxe">
+                        Deluxe
+                    </option>
+
+                    <option value="Suite">
+                        Suite
+                    </option>
+
+                </select>
+
+                <label>Check-in</label>
+
+                <input
+                    type="date"
+                    id="searchCheckIn">
+
+                <label>Check-out</label>
+
+                <input
+                    type="date"
+                    id="searchCheckOut">
+
+                <button type="submit">
+                    Search
+                </button>
+
+                <button
+                    type="button"
+                    onclick="loadRooms()">
+
+                    Show All Rooms
+
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- ======================================
+             ROOMS
+        ======================================= -->
+
+        <section class="card">
+
+            <h2>Available Rooms</h2>
+
+            <div id="roomsContainer">
+
+                Loading rooms...
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             BOOKING FORM
+        ======================================= -->
+
+        <section class="card">
+
+            <h2>Book Room</h2>
+
+            <form id="bookingForm">
+
+                <input
+                    type="hidden"
+                    id="bookingRoomId">
+
+                <input
+                    type="text"
+                    id="guestName"
+                    placeholder="Guest Name"
+                    required
+                    minlength="2">
+
+                <input
+                    type="date"
+                    id="checkIn"
+                    required>
+
+                <input
+                    type="date"
+                    id="checkOut"
+                    required>
+
+                <button type="submit">
+                    Book Room
+                </button>
+
+            </form>
+
+            <p id="selectedRoom">
+                No room selected
+            </p>
+
+        </section>
+
+
+        <!-- ======================================
+             BOOKINGS
+        ======================================= -->
+
+        <section class="card">
+
+            <h2>All Bookings</h2>
+
+            <div id="bookingsContainer">
+
+                Loading bookings...
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
